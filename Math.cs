@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Linq;
-using System.IO;
 using System.Numerics;
 
+/* Learning reflection: This is not a neatly-made program. If it were, class Append() would not duplicate most of class MakeFib(); the return type of MakeFib() is currently empty, meaning that the variables I've created cannot be used outside of the method MakeFib(), hence the essential duplication of the class. As this is a learning exercise, the focus has been on the output being correct.
+
+Additionally, there would be a third class i.e. FindFlag() that would handle the isolation of the flag element at the end.
+ */
+ 
 namespace Algo_100__Appended_Fibonacci_Sum.Maths
 {
-    class FibonacciCreator
+    public class FibonacciCreator
     {
-        public int N;
+        public long N;
 
         public void MakeFib()
         {
@@ -124,12 +127,22 @@ namespace Algo_100__Appended_Fibonacci_Sum.Maths
             Console.WriteLine($"N: {N}, Fib[j] {fibLong[j]}, j: {j}");
             Console.WriteLine($"Appended values: {appendedValues}, and sum: {sumOfAppended}");
 
-            var lengthOfSum = sumOfAppended.ToString().Length;
-            var chars = sumOfAppended.ToString().ToCharArray(lengthOfSum - 9, 9);
-            //Array.Reverse(chars);
-            var flag = new string(chars);
-            
-            Console.WriteLine($"You have captured the flag: {flag}");
+            if (N >= 9)
+            {
+                var lengthOfSum = sumOfAppended.ToString().Length;
+                var chars = sumOfAppended.ToString().ToCharArray(lengthOfSum - 9, 9);
+                var flag = new string(chars);
+                Console.WriteLine($"You have captured the flag: {flag}");
+            }
+            else
+            {
+                Console.WriteLine("Your number was smaller than 9.");
+                var chars = sumOfAppended.ToString().ToCharArray();
+                var flag = new string(chars);
+                Console.WriteLine($"This result is more underwhelming than if you'd picked n = 50: {flag}");
+            }
+
+          
 
 
 
