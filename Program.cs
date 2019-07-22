@@ -50,9 +50,6 @@ For the sake of a more interesting result, consider picking a number greater tha
                 }
             }
 
-
-
-            
             var range = new FibonacciCreator();
             range.N = n;
             range.MakeFib();

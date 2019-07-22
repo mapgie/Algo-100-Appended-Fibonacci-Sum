@@ -61,20 +61,8 @@ namespace Algo_100__Appended_Fibonacci_Sum.Maths
             var a = fibLong[1] = 1;
             var b = fibLong[2] = 1;
 
-            if (N == 1)
+            if (N >= 1)
             {
-                //Console.WriteLine($"n = 1; Fib(n) = {finDoubles[N]}");
-            }
-            else if (N == 2)
-            {
-                //Console.WriteLine($"n = 1; Fib(n) = {finDoubles[N - 1]}");
-                //Console.WriteLine($"n = 2; Fib(n) = {finDoubles[N]}");
-            }
-            else
-            {
-                //Console.WriteLine($"n = 1; Fib(n) = {a}");
-                //Console.WriteLine($"n = 2; Fib(n) = {b}");
-
                 var i = 3;
 
                 foreach (var n in fibLong)
@@ -82,7 +70,6 @@ namespace Algo_100__Appended_Fibonacci_Sum.Maths
                     while (i <= N)
                     {
                         fibLong[i] = fibLong[i - 1] + fibLong[i - 2];
-                        //Console.WriteLine($"i = {i}; Fib(n) = {finDoubles[i]}");
                         ++i;
                     }
                 }
@@ -95,19 +82,19 @@ namespace Algo_100__Appended_Fibonacci_Sum.Maths
             Console.WriteLine("Now we want to append this number to all the previous fib sequence numbers:");
 
             var j = 3;
-            BigInteger appendedValues = new BigInteger(0);
-            BigInteger sumOfAppended = new BigInteger(12);
+            var appendedValues = new BigInteger(0);
+            var sumOfAppended = new BigInteger(12);
 
             if (N == 1)
             {
                 Console.WriteLine("Appended values = 1");
-                Console.WriteLine("Sum of Appended values = 1");
+                Console.WriteLine("Sum of appended values = 1");
             }
             else if (N == 2)
             {
                 appendedValues = 11;
                 Console.WriteLine("Appended values = 11");
-                Console.WriteLine("Appended values = 12");
+                Console.WriteLine("Sum of appended values = 12");
             }
             else
             {
